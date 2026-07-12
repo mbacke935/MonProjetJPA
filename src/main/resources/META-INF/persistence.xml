@@ -8,6 +8,7 @@
         <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
 
         <class>en.edu.ucak.entites.Produit</class>
+        <class>en.edu.ucak.entites.Marque</class>
         <class>en.edu.ucak.entites.Client</class>
         <class>en.edu.ucak.entites.Carte</class>
 
