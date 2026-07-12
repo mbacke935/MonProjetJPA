@@ -9,6 +9,7 @@
 
         <class>en.edu.ucak.entites.Produit</class>
         <class>en.edu.ucak.entites.Client</class>
+        <class>en.edu.ucak.entites.Carte</class>
 
         <properties>
             <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/boutiqueucak?zeroDateTimeBehavior=CONVERT_TO_NULL&amp;autoReconnect=true&amp;useSSL=false"/>
