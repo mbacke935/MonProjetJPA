@@ -7,6 +7,9 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.math.BigDecimal;
+import java.util.Objects;
+import en.edu.ucak.entites.Marque;
 
 @Entity
 @Getter
@@ -48,5 +51,39 @@ public class Produit implements Serializable {
     @PreUpdate
     public void preUpdate(){
 
+    }
+
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "marque_id", nullable = false)
+    private Marque marque;
+
+    @Column(nullable = false, precision = 13, scale = 2)
+    private BigDecimal prix;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Produit produit = (Produit) o;
+        return Objects.equals(id, produit.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
+
+    public Produit(String code, String description, String nom, BigDecimal prix, Marque marque) {
+        this.code = code;
+        this.description = description;
+        this.nom = nom;
+        this.prix = prix;
+        this.marque = marque;
+    }
+
+    public Produit(String code, String nom, BigDecimal prix) {
+        this.code = code;
+        this.nom = nom;
+        this.prix = prix;
     }
 }
