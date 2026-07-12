@@ -28,7 +28,7 @@ public class Produit implements Serializable {
     private String nom;
 
     @Column(nullable = false)
-    private LocalDateTime dateCreation;
+//    private LocalDateTime dateCreation;
 
     @Column(nullable = false)
     private LocalDateTime dateModification;
